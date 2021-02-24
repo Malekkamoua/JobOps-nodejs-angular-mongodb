@@ -1,0 +1,59 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+    <div class="container-fluid">
+      <div class="header-body">
+        <!-- Card stats -->
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid mt--7" style="position: relative; top:-100px;">
+    <div class="row mt-5">
+      <div class="col-xl-12 mb-5 mb-xl-0">
+        <div class="card shadow">
+          <div class="card-header border-0">
+            <div class="row align-items-center">
+              <div class="col">
+                <h3 class="mb-0">{{search_text}} </h3>
+              </div>
+            </div>
+          </div>
+          <div class="table-responsive">
+            <flash-messages></flash-messages>
+            <!-- Projects table -->
+            <div style="margin:1%;">
+              <div class="job">
+                <div class="wrapper">
+                 <div class="main-container">
+                  <div class="searched-jobs">
+                   <div class="searched-bar">
+                    <div class="searched-show">Showing {{jobs?.length}} Jobs</div>
+                   </div>
+                   <div class="job-cards">
+                    <div class="job-card" *ngFor="let job of jobs" >
+                     <div class="job-card-header">
+                       <img src={{job.image}} height="50px" width="50px">
+                      <div class="menu-dot"></div>
+                     </div>
+                     <div class="job-card-title"> {{job.title | slice:0:50 }} .. </div>
+                     <div class="job-card-subtitle">
+                      {{ job.description | slice:0:100 }} ..
+
+                     </div>
+                     <div class="job-detail-buttons">
+                      <button class="search-buttons detail-button" *ngIf="job.has_keywords"><b><u>Has keyword</u></b> {{job.keywords}} </button>
+                     </div>
+                     <div class="job-card-buttons">
+                      <button class="search-buttons card-buttons" (click)="onViewClick(job._id)">View details</button>
+                      <button class="search-buttons card-buttons-msg" (click)="onDeleteClick(job._id)">Delete</button>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,39 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+  <div class="container-fluid">
+    <div class="header-body">
+      <!-- Card stats -->
+    </div>
+  </div>
+</div>
+<div class="container-fluid mt--7" style="position: relative; top:-100px;">
+  <div class="row mt-5">
+    <div class="col-xl-12 mb-5 mb-xl-0">
+      <div class="card shadow">
+        <div class="table-responsive">
+          <flash-messages></flash-messages>
+          <!-- Projects table -->
+          <div style="margin:3%;">
+            <form (submit)= "onSearchSubmit()">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Search Text</label>
+                <input type="text" class="form-control"  [(ngModel)]="search_text" name="search_text"
+                  placeholder="Eg: web developer">
+                <small id="emailHelp" class="form-text text-muted">Try to be precise to optimise your research </small>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Keywords</label>
+                <input type="text" class="form-control"  [(ngModel)]="keywords" name="keywords" placeholder="Eg: Laravel node Javascript Tunis">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Pages to search </label>
+                <input type="number" class="form-control"  [(ngModel)]="pages" name="pages" placeholder="Eg: 2" min="1">
+              </div>
+
+              <input type="submit" class="btn btn-primary" value="Scrape me jobs !">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

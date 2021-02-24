@@ -1,0 +1,90 @@
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 600px; background-size: cover; background-position: center top;">
+  <!-- Mask -->
+  <span class="mask bg-gradient-danger opacity-8"></span>
+  <!-- Header container -->
+  <div class="container-fluid d-flex align-items-center">
+  </div>
+</div>
+<div class="container-fluid mt--7" style="position: relative; top:-350px;">
+  <div class="row">
+    <div class="col-xl-5 order-xl-2 mb-5 mb-xl-0">
+      <div class="card card-profile shadow">
+        <pdf-viewer [src]="cv" [render-text]="true"[zoom]="0.5"style="display: block;"></pdf-viewer>
+        <!-- <form (submit)= "onUploadSubmit()" enctype="multipart/form-data">
+          <input type="file"  [(ngModel)]="fileToUpload" name="fileToUpload" (change)="handleFileInput($event.target.files)">
+          <input type="submit" class="btn btn-sm btn-primary" style="float:b right;" value="Upload cv"/>
+        </form> -->
+      </div>
+    </div>
+    <div class="col-xl-7 order-xl-1">
+      <div class="card bg-secondary shadow">
+        <div class="card-header bg-white border-0">
+          <div class="row align-items-center">
+            <div class="col-8">
+              <h3 class="mb-0">My profile</h3>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <form (submit)= "onUpdateSubmit()" enctype="multipart/form-data">
+            <flash-messages></flash-messages>
+            <h6 class="heading-small text-muted mb-4">User information</h6>
+            <div class="pl-lg-4">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-username">Username</label>
+                    <input type="text" class="form-control form-control-alternative" placeholder="Username"  [(ngModel)]="name" name="name" value={{user?.name}}>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">Email address</label>
+                    <input type="email"  [(ngModel)]="email" name="email" class="form-control form-control-alternative" placeholder="jesse@example.com" value={{user?.email}}>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-first-name">First name</label>
+                    <input type="text"  [(ngModel)]="first_name" name="first_name" class="form-control form-control-alternative" placeholder="First name" value={{user?.first_name}}>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-last-name">Last name</label>
+                    <input type="text"  [(ngModel)]="last_name" name="last_name" class="form-control form-control-alternative" placeholder="Last name" value={{user?.last_name}}>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr class="my-4" />
+            <!-- Description -->
+            <h6 class="heading-small text-muted mb-4">More info</h6>
+            <div class="pl-lg-4">
+              <div class="form-group">
+                <label class="form-control-label" for="input-last-name">Motivation letter</label>
+                <textarea rows="10" class="form-control form-control-alternative"  [(ngModel)]="motivation_letter" name="motivation_letter" value={{user?.motivation_letter}} ></textarea>
+              </div>
+            </div>
+              <input type="submit" class="btn btn-sm btn-primary" style="float:b right;" value="Update Info"/>
+          </form>
+
+          <hr class="my-4" />
+          <!-- Description -->
+          <h6 class="heading-small text-muted mb-4">Update CV</h6>
+          <div class="pl-lg-4">
+            <form  enctype="multipart/form-data">
+              <div class="form-group">
+                <label class="form-control-label" for="input-last-name">My cv </label> <br>
+                <input type="file" (change)="fileChange($event)" placeholder="Upload file" accept=".pdf"> <br>
+                <small>Once you choose a file it's automatically uploaded</small>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<div class="header bg-gradient-danger py-7 py-lg-8">
+  <div class="container">
+    <div class="header-body text-center mb-7">
+      <div class="row justify-content-center">
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Page content -->
+<div class="container mt--8 pb-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-5 col-md-7">
+      <div class="card bg-secondary shadow border-0">
+        <div class="card-header bg-transparent pb-5" style="position: relative;left: 11%; top:20px;">
+          <img src="./assets/img/brand/01.png" class="navbar-brand-img" alt="..." height="100px" width="300px">
+        </div>
+        <div class="card-body px-lg-5 py-lg-5">
+          <div class="text-center text-muted mb-4">
+            <small>Sign up with credentials</small>
+          </div>
+          <form (submit)="onRegisterSubmit()">
+            <flash-messages></flash-messages>
+            <div class="form-group">
+              <div class="input-group input-group-alternative mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                </div>
+                <input class="form-control" placeholder="Name" type="text" [(ngModel)]="name" name="name">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group input-group-alternative mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                </div>
+                <input class="form-control" placeholder="Email" [(ngModel)]="email" name="email" type="email">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group input-group-alternative">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                </div>
+                <input class="form-control" placeholder="Password" type="password" [(ngModel)]="password"
+                  name="password">
+              </div>
+            </div>
+            <div class="text-center">
+              <input type="submit" class="btn btn-primary my-4" value="Create Account">
+              <a type="button" class="btn btn-success my-4" [routerLink]="['/login']">Sign in </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

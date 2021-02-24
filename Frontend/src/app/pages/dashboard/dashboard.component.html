@@ -1,0 +1,53 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+  <div class="container-fluid">
+    <div class="header-body">
+      <!-- Card stats -->
+    </div>
+  </div>
+</div>
+<div class="container-fluid mt--7" style="position: relative; top:-100px;">
+  <div class="row mt-5">
+    <div class="col-xl-12 mb-5 mb-xl-0">
+      <div class="card shadow">
+        <div class="card-header border-0">
+          <div class="row align-items-center">
+            <div class="col">
+              <h3 class="mb-0">My search results</h3>
+            </div>
+            <div class="col text-right">
+              <button (click)="OnRefreshClick()" href="#!" class="btn btn-sm btn-primary">Refresh</button>
+            </div>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <flash-messages></flash-messages>
+          <!-- Projects table -->
+          <table class="table align-items-center table-flush">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Search text</th>
+                <th scope="col">Key words</th>
+                <th scope="col"></th>
+                <th scope="col">Jobs</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody  *ngFor="let item of searches" >
+              <tr  *ngIf="show" @fadeIn @fadeOut>
+                <th scope="row" >
+                  <button style="all: unset;"  (click)="searchByText(item.search_text)">{{item.search_text}}</button>
+                </th>
+                <td>{{item.keywords}}</td>
+                <td></td>
+                <td>{{item.job_count}}</td>
+                <td>
+                  <button style="all: unset;" (click)="onDeleteClick(item._id, item.search_text)"> <font color="red"><b>x</b></font></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
