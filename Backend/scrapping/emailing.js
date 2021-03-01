@@ -30,7 +30,7 @@ async function sendEmail() {
 
                 try {
                     let info = transporter.sendMail({
-                        from: 'malekkamoua50@gmail.com',
+                        from: process.env.EMAIL,
                         to: 'malekkamoua50@gmail.com', // entreprise_email
                         subject: ` ${notif.title} Job submission`,
                         text: `Email: ${user.email} \n \n ${user.motivation_letter}  `,
